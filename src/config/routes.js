@@ -1,12 +1,12 @@
-import Home from '../pages/Home';
-import Dashboard from '../pages/Dashboard';
-import Patients from '../pages/Patients';
-import PatientProfile from '../pages/PatientProfile';
-import Appointments from '../pages/Appointments';
-import Staff from '../pages/Staff';
-import Departments from '../pages/Departments';
-import Reports from '../pages/Reports';
-import NotFound from '../pages/NotFound';
+import HomePage from '@/components/pages/HomePage';
+import DashboardPage from '@/components/pages/DashboardPage';
+import PatientsPage from '@/components/pages/PatientsPage';
+import PatientProfilePage from '@/components/pages/PatientProfilePage';
+import AppointmentsPage from '@/components/pages/AppointmentsPage';
+import StaffPage from '@/components/pages/StaffPage';
+import DepartmentsPage from '@/components/pages/DepartmentsPage';
+import ReportsPage from '@/components/pages/ReportsPage';
+import NotFoundPage from '@/components/pages/NotFoundPage';
 
 export const routes = {
   home: {
@@ -14,28 +14,28 @@ export const routes = {
     label: 'Home',
     path: '/',
     icon: 'Home',
-    component: Home
+component: HomePage
   },
   dashboard: {
     id: 'dashboard',
     label: 'Dashboard',
     path: '/dashboard',
     icon: 'LayoutDashboard',
-    component: Dashboard
+component: DashboardPage
   },
   patients: {
     id: 'patients',
     label: 'Patients',
     path: '/patients',
     icon: 'Users',
-    component: Patients
+component: PatientsPage
   },
   patientProfile: {
     id: 'patientProfile',
     label: 'Patient Profile',
     path: '/patients/:id',
     icon: 'User',
-    component: PatientProfile,
+component: PatientProfilePage,
     hideFromNav: true
   },
   appointments: {
@@ -43,34 +43,34 @@ export const routes = {
     label: 'Appointments',
     path: '/appointments',
     icon: 'Calendar',
-    component: Appointments
+component: AppointmentsPage
   },
   staff: {
     id: 'staff',
     label: 'Staff',
     path: '/staff',
     icon: 'UserCheck',
-    component: Staff
+component: StaffPage
   },
   departments: {
     id: 'departments',
     label: 'Departments',
     path: '/departments',
     icon: 'Building2',
-    component: Departments
+component: DepartmentsPage
   },
   reports: {
     id: 'reports',
     label: 'Reports',
     path: '/reports',
     icon: 'FileText',
-    component: Reports
+component: ReportsPage
   },
   notFound: {
     id: 'notFound',
     label: '404',
     path: '*',
-    component: NotFound,
+component: NotFoundPage,
     hideFromNav: true
   }
 };
