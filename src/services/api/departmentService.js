@@ -1,52 +1,67 @@
-import departmentsData from '../mockData/departments.json';
-
-const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-
 class DepartmentService {
   constructor() {
-    this.departments = [...departmentsData];
+    const { ApperClient } = window.ApperSDK;
+    this.apperClient = new ApperClient({
+      apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
+      apperPublicKey: import.meta.env.VITE_APPER_PUBLIC_KEY
+    });
+    this.tableName = 'department';
+    this.allFields = [
+      'Name', 'Tags', 'Owner', 'CreatedOn', 'CreatedBy', 'ModifiedOn', 'ModifiedBy',
+      'description', 'phone', 'email'
+    ];
+    this.updateableFields = [
+      'Name', 'description', 'phone', 'email'
+    ];
   }
 
   async getAll() {
-    await delay(280);
-    return [...this.departments];
+    try {
+      const params = {
+        fields: this.allFields
+      };
+      const response = await this.apperClient.fetchRecords(this.tableName, params);
+      return response?.data || [];
+    } catch (error) {
+      console.error('Error fetching departments:', error);
+      throw error;
+    }
   }
 
   async getById(id) {
-    await delay(200);
-    const department = this.departments.find(d => d.id === id);
-    return department ? { ...department } : null;
+    try {
+      const params = {
+        fields: this.allFields
+      };
+      const response = await this.apperClient.getRecordById(this.tableName, id, params);
+      return response?.data || null;
+    } catch (error) {
+      console.error(`Error fetching department with ID ${id}:`, error);
+      throw error;
+    }
   }
 
   async create(departmentData) {
-    await delay(350);
-    const newDepartment = {
-      ...departmentData,
-      id: `DEPT-${Date.now()}`,
-      createdAt: new Date().toISOString()
-    };
-    this.departments.push(newDepartment);
-    return { ...newDepartment };
-  }
-
-  async update(id, updatedData) {
-    await delay(300);
-    const index = this.departments.findIndex(d => d.id === id);
-    if (index === -1) {
-      throw new Error('Department not found');
+    try {
+      const params = {
+        records: [{
+          Name: departmentData.name || departmentData.Name,
+          description: departmentData.description,
+          phone: departmentData.phone,
+          email: departmentData.email
+        }]
+      };
+      const response = await this.apperClient.createRecord(this.tableName, params);
+      
+      if (!response.success) {
+        throw new Error(response.message);
+      }
+      
+      return response.results?.[0]?.data || null;
+    } catch (error) {
+      console.error('Error creating department:', error);
+      throw error;
     }
-    this.departments[index] = { ...this.departments[index], ...updatedData };
-    return { ...this.departments[index] };
-  }
-
-  async delete(id) {
-    await delay(250);
-    const index = this.departments.findIndex(d => d.id === id);
-    if (index === -1) {
-      throw new Error('Department not found');
-    }
-    this.departments.splice(index, 1);
-    return true;
   }
 }
 

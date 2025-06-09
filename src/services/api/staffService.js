@@ -1,52 +1,68 @@
-import staffData from '../mockData/staff.json';
-
-const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-
 class StaffService {
   constructor() {
-    this.staff = [...staffData];
+    const { ApperClient } = window.ApperSDK;
+    this.apperClient = new ApperClient({
+      apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
+      apperPublicKey: import.meta.env.VITE_APPER_PUBLIC_KEY
+    });
+    this.tableName = 'staff';
+    this.allFields = [
+      'Name', 'Tags', 'Owner', 'CreatedOn', 'CreatedBy', 'ModifiedOn', 'ModifiedBy',
+      'department_id', 'role', 'phone', 'email'
+    ];
+    this.updateableFields = [
+      'Name', 'department_id', 'role', 'phone', 'email'
+    ];
   }
 
   async getAll() {
-    await delay(300);
-    return [...this.staff];
+    try {
+      const params = {
+        fields: this.allFields
+      };
+      const response = await this.apperClient.fetchRecords(this.tableName, params);
+      return response?.data || [];
+    } catch (error) {
+      console.error('Error fetching staff:', error);
+      throw error;
+    }
   }
 
   async getById(id) {
-    await delay(200);
-    const member = this.staff.find(s => s.id === id);
-    return member ? { ...member } : null;
-  }
-
-  async create(memberData) {
-    await delay(400);
-    const newMember = {
-      ...memberData,
-      id: `STF-${Date.now()}`,
-      createdAt: new Date().toISOString()
-    };
-    this.staff.push(newMember);
-    return { ...newMember };
-  }
-
-  async update(id, updatedData) {
-    await delay(300);
-    const index = this.staff.findIndex(s => s.id === id);
-    if (index === -1) {
-      throw new Error('Staff member not found');
+    try {
+      const params = {
+        fields: this.allFields
+      };
+      const response = await this.apperClient.getRecordById(this.tableName, id, params);
+      return response?.data || null;
+    } catch (error) {
+      console.error(`Error fetching staff member with ID ${id}:`, error);
+      throw error;
     }
-    this.staff[index] = { ...this.staff[index], ...updatedData };
-    return { ...this.staff[index] };
   }
 
-  async delete(id) {
-    await delay(250);
-    const index = this.staff.findIndex(s => s.id === id);
-    if (index === -1) {
-      throw new Error('Staff member not found');
+  async create(staffData) {
+    try {
+      const params = {
+        records: [{
+          Name: staffData.name || staffData.Name,
+          department_id: parseInt(staffData.departmentId) || parseInt(staffData.department_id),
+          role: staffData.role,
+          phone: staffData.phone,
+          email: staffData.email
+        }]
+      };
+      const response = await this.apperClient.createRecord(this.tableName, params);
+      
+      if (!response.success) {
+        throw new Error(response.message);
+      }
+      
+      return response.results?.[0]?.data || null;
+    } catch (error) {
+      console.error('Error creating staff member:', error);
+      throw error;
     }
-    this.staff.splice(index, 1);
-    return true;
   }
 }
 

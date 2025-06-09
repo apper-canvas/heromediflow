@@ -1,52 +1,76 @@
-import patientsData from '../mockData/patients.json';
-
-const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-
 class PatientService {
   constructor() {
-    this.patients = [...patientsData];
+    const { ApperClient } = window.ApperSDK;
+    this.apperClient = new ApperClient({
+      apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
+      apperPublicKey: import.meta.env.VITE_APPER_PUBLIC_KEY
+    });
+    this.tableName = 'patient';
+    this.allFields = [
+      'Name', 'Tags', 'Owner', 'CreatedOn', 'CreatedBy', 'ModifiedOn', 'ModifiedBy',
+      'date_of_birth', 'gender', 'phone', 'email', 'address', 'blood_type', 
+      'allergies', 'emergency_contact_name', 'emergency_contact_phone', 'emergency_contact_relationship'
+    ];
+    this.updateableFields = [
+      'Name', 'date_of_birth', 'gender', 'phone', 'email', 'address', 'blood_type',
+      'allergies', 'emergency_contact_name', 'emergency_contact_phone', 'emergency_contact_relationship'
+    ];
   }
 
   async getAll() {
-    await delay(300);
-    return [...this.patients];
+    try {
+      const params = {
+        fields: this.allFields
+      };
+      const response = await this.apperClient.fetchRecords(this.tableName, params);
+      return response?.data || [];
+    } catch (error) {
+      console.error('Error fetching patients:', error);
+      throw error;
+    }
   }
 
   async getById(id) {
-    await delay(200);
-    const patient = this.patients.find(p => p.id === id);
-    return patient ? { ...patient } : null;
+    try {
+      const params = {
+        fields: this.allFields
+      };
+      const response = await this.apperClient.getRecordById(this.tableName, id, params);
+      return response?.data || null;
+    } catch (error) {
+      console.error(`Error fetching patient with ID ${id}:`, error);
+      throw error;
+    }
   }
 
   async create(patientData) {
-    await delay(400);
-    const newPatient = {
-      ...patientData,
-      id: `PAT-${Date.now()}`,
-      createdAt: new Date().toISOString()
-    };
-    this.patients.push(newPatient);
-    return { ...newPatient };
-  }
-
-  async update(id, updatedData) {
-    await delay(300);
-    const index = this.patients.findIndex(p => p.id === id);
-    if (index === -1) {
-      throw new Error('Patient not found');
+    try {
+      const params = {
+        records: [{
+          Name: patientData.name || patientData.Name,
+          date_of_birth: patientData.dateOfBirth || patientData.date_of_birth,
+          gender: patientData.gender,
+          phone: patientData.phone,
+          email: patientData.email,
+          address: patientData.address,
+          blood_type: patientData.bloodType || patientData.blood_type,
+          allergies: patientData.allergies,
+          emergency_contact_name: patientData.emergencyContact?.name || patientData.emergency_contact_name,
+          emergency_contact_phone: patientData.emergencyContact?.phone || patientData.emergency_contact_phone,
+          emergency_contact_relationship: patientData.emergencyContact?.relationship || patientData.emergency_contact_relationship
+        }]
+      };
+      const response = await this.apperClient.createRecord(this.tableName, params);
+      
+      if (!response.success) {
+        throw new Error(response.message);
+      }
+      
+      return response.results?.[0]?.data || null;
+    } catch (error) {
+      console.error('Error creating patient:', error);
+      throw error;
     }
-    this.patients[index] = { ...this.patients[index], ...updatedData };
-    return { ...this.patients[index] };
-  }
-
-  async delete(id) {
-    await delay(250);
-    const index = this.patients.findIndex(p => p.id === id);
-    if (index === -1) {
-      throw new Error('Patient not found');
-    }
-    this.patients.splice(index, 1);
-    return true;
   }
 }
 
