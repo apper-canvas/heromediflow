@@ -39,10 +39,14 @@ function AppContent() {
         setIsInitialized(true);
 // CRITICAL: This exact currentPath logic must be preserved in all implementations
         // DO NOT simplify or modify this pattern as it ensures proper redirection flow
-        let currentPath = window.location.pathname + window.location.search;
+let currentPath = window.location.pathname + window.location.search;
         let redirectPath = null;
         try {
-          redirectPath = new URLSearchParams(window.location.search).get('redirect');
+          if (typeof URLSearchParams !== 'undefined') {
+            redirectPath = new URLSearchParams(window.location.search).get('redirect');
+          } else {
+            throw new Error('URLSearchParams not available');
+          }
         } catch (error) {
           console.warn('URLSearchParams not available:', error);
           // Fallback for older browsers or SSR
@@ -50,9 +54,11 @@ function AppContent() {
           const match = searchParams.match(/[?&]redirect=([^&]*)/);
           redirectPath = match ? decodeURIComponent(match[1]) : null;
         }
-        const isAuthPage = currentPath.includes('/login') || currentPath.includes('/signup') || currentPath.includes(
+const isAuthPage = currentPath.includes('/login') || currentPath.includes('/signup') || currentPath.includes(
                 '/callback') || currentPath.includes('/error');
         if (user) {
+          // User is authenticated
+          if (redirectPath) {
             navigate(redirectPath);
           } else if (!isAuthPage) {
             if (!currentPath.includes('/login') && !currentPath.includes('/signup')) {
