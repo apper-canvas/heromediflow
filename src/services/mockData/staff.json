@@ -1,0 +1,172 @@
+[
+  {
+    "id": "STF-001",
+    "name": "Dr. Jennifer Matthews",
+    "role": "Doctor",
+    "departmentId": "DEPT-001",
+    "specialization": "Internal Medicine",
+    "phone": "+1-555-1001",
+    "email": "j.matthews@hospital.com",
+    "availability": {
+      "monday": "08:00-17:00",
+      "tuesday": "08:00-17:00",
+      "wednesday": "08:00-17:00",
+      "thursday": "08:00-17:00",
+      "friday": "08:00-14:00"
+    },
+    "currentStatus": "available"
+  },
+  {
+    "id": "STF-002",
+    "name": "Dr. Michael Brown",
+    "role": "Doctor",
+    "departmentId": "DEPT-002",
+    "specialization": "Cardiology",
+    "phone": "+1-555-1002",
+    "email": "m.brown@hospital.com",
+    "availability": {
+      "monday": "09:00-18:00",
+      "tuesday": "09:00-18:00",
+      "wednesday": "09:00-18:00",
+      "thursday": "09:00-18:00",
+      "friday": "09:00-15:00"
+    },
+    "currentStatus": "busy"
+  },
+  {
+    "id": "STF-003",
+    "name": "Dr. Lisa Anderson",
+    "role": "Doctor",
+    "departmentId": "DEPT-003",
+    "specialization": "Neurology",
+    "phone": "+1-555-1003",
+    "email": "l.anderson@hospital.com",
+    "availability": {
+      "monday": "07:00-16:00",
+      "tuesday": "07:00-16:00",
+      "wednesday": "07:00-16:00",
+      "thursday": "07:00-16:00",
+      "friday": "07:00-12:00"
+    },
+    "currentStatus": "available"
+  },
+  {
+    "id": "STF-004",
+    "name": "Dr. David Wilson",
+    "role": "Doctor",
+    "departmentId": "DEPT-004",
+    "specialization": "Pediatrics",
+    "phone": "+1-555-1004",
+    "email": "d.wilson@hospital.com",
+    "availability": {
+      "monday": "08:00-17:00",
+      "tuesday": "08:00-17:00",
+      "wednesday": "08:00-17:00",
+      "thursday": "08:00-17:00",
+      "friday": "08:00-14:00"
+    },
+    "currentStatus": "unavailable"
+  },
+  {
+    "id": "STF-005",
+    "name": "Dr. Susan Taylor",
+    "role": "Doctor",
+    "departmentId": "DEPT-005",
+    "specialization": "Orthopedics",
+    "phone": "+1-555-1005",
+    "email": "s.taylor@hospital.com",
+    "availability": {
+      "monday": "10:00-19:00",
+      "tuesday": "10:00-19:00",
+      "wednesday": "10:00-19:00",
+      "thursday": "10:00-19:00",
+      "friday": "10:00-16:00"
+    },
+    "currentStatus": "available"
+  },
+  {
+    "id": "STF-006",
+    "name": "Dr. Robert Davis",
+    "role": "Doctor",
+    "departmentId": "DEPT-006",
+    "specialization": "Pulmonology",
+    "phone": "+1-555-1006",
+    "email": "r.davis@hospital.com",
+    "availability": {
+      "monday": "08:00-17:00",
+      "tuesday": "08:00-17:00",
+      "wednesday": "08:00-17:00",
+      "thursday": "08:00-17:00",
+      "friday": "08:00-14:00"
+    },
+    "currentStatus": "busy"
+  },
+  {
+    "id": "STF-007",
+    "name": "Dr. Rachel Martinez",
+    "role": "Doctor",
+    "departmentId": "DEPT-007",
+    "specialization": "Obstetrics & Gynecology",
+    "phone": "+1-555-1007",
+    "email": "r.martinez@hospital.com",
+    "availability": {
+      "monday": "08:00-17:00",
+      "tuesday": "08:00-17:00",
+      "wednesday": "08:00-17:00",
+      "thursday": "08:00-17:00",
+      "friday": "08:00-14:00"
+    },
+    "currentStatus": "available"
+  },
+  {
+    "id": "STF-008",
+    "name": "Dr. Kevin Thompson",
+    "role": "Doctor",
+    "departmentId": "DEPT-008",
+    "specialization": "Endocrinology",
+    "phone": "+1-555-1008",
+    "email": "k.thompson@hospital.com",
+    "availability": {
+      "monday": "09:00-18:00",
+      "tuesday": "09:00-18:00",
+      "wednesday": "09:00-18:00",
+      "thursday": "09:00-18:00",
+      "friday": "09:00-15:00"
+    },
+    "currentStatus": "off-duty"
+  },
+  {
+    "id": "STF-009",
+    "name": "Nancy Johnson",
+    "role": "Nurse",
+    "departmentId": "DEPT-001",
+    "specialization": "General Nursing",
+    "phone": "+1-555-2001",
+    "email": "n.johnson@hospital.com",
+    "availability": {
+      "monday": "07:00-19:00",
+      "tuesday": "07:00-19:00",
+      "wednesday": "07:00-19:00",
+      "thursday": "07:00-19:00",
+      "friday": "07:00-15:00"
+    },
+    "currentStatus": "available"
+  },
+  {
+    "id": "STF-010",
+    "name": "Mark Rodriguez",
+    "role": "Technician",
+    "departmentId": "DEPT-009",
+    "specialization": "Radiology Technology",
+    "phone": "+1-555-3001",
+    "email": "m.rodriguez@hospital.com",
+    "availability": {
+      "monday": "06:00-14:00",
+      "tuesday": "06:00-14:00",
+      "wednesday": "06:00-14:00",
+      "thursday": "06:00-14:00",
+      "friday": "06:00-14:00"
+    },
+    "currentStatus": "available"
+  }
+]

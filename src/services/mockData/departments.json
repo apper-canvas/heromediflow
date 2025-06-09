@@ -1,0 +1,226 @@
+[
+  {
+    "id": "DEPT-001",
+    "name": "Emergency",
+    "head": "Dr. Jennifer Matthews",
+    "location": "Ground Floor, Wing A",
+    "activeQueue": [
+      {
+        "number": 1,
+        "name": "John Smith",
+        "waitTime": 15
+      },
+      {
+        "number": 2,
+        "name": "Alice Brown",
+        "waitTime": 8
+      }
+    ],
+    "avgWaitTime": 12
+  },
+  {
+    "id": "DEPT-002",
+    "name": "Cardiology",
+    "head": "Dr. Michael Brown",
+    "location": "2nd Floor, Wing B",
+    "activeQueue": [
+      {
+        "number": 1,
+        "name": "Robert Johnson",
+        "waitTime": 25
+      },
+      {
+        "number": 2,
+        "name": "Mary Davis",
+        "waitTime": 18
+      },
+      {
+        "number": 3,
+        "name": "David Wilson",
+        "waitTime": 12
+      },
+      {
+        "number": 4,
+        "name": "Sarah Miller",
+        "waitTime": 5
+      }
+    ],
+    "avgWaitTime": 20
+  },
+  {
+    "id": "DEPT-003",
+    "name": "Neurology",
+    "head": "Dr. Lisa Anderson",
+    "location": "3rd Floor, Wing A",
+    "activeQueue": [
+      {
+        "number": 1,
+        "name": "Michael Taylor",
+        "waitTime": 35
+      }
+    ],
+    "avgWaitTime": 18
+  },
+  {
+    "id": "DEPT-004",
+    "name": "Pediatrics",
+    "head": "Dr. David Wilson",
+    "location": "1st Floor, Wing C",
+    "activeQueue": [
+      {
+        "number": 1,
+        "name": "Emma Thompson",
+        "waitTime": 10
+      },
+      {
+        "number": 2,
+        "name": "Oliver Garcia",
+        "waitTime": 5
+      },
+      {
+        "number": 3,
+        "name": "Sophia Martinez",
+        "waitTime": 2
+      }
+    ],
+    "avgWaitTime": 8
+  },
+  {
+    "id": "DEPT-005",
+    "name": "Orthopedics",
+    "head": "Dr. Susan Taylor",
+    "location": "2nd Floor, Wing C",
+    "activeQueue": [],
+    "avgWaitTime": 15
+  },
+  {
+    "id": "DEPT-006",
+    "name": "Pulmonology",
+    "head": "Dr. Robert Davis",
+    "location": "3rd Floor, Wing B",
+    "activeQueue": [
+      {
+        "number": 1,
+        "name": "Jennifer Lee",
+        "waitTime": 22
+      },
+      {
+        "number": 2,
+        "name": "Thomas Anderson",
+        "waitTime": 14
+      }
+    ],
+    "avgWaitTime": 16
+  },
+  {
+    "id": "DEPT-007",
+    "name": "Obstetrics & Gynecology",
+    "head": "Dr. Rachel Martinez",
+    "location": "4th Floor, Wing A",
+    "activeQueue": [
+      {
+        "number": 1,
+        "name": "Lisa Rodriguez",
+        "waitTime": 30
+      },
+      {
+        "number": 2,
+        "name": "Amanda White",
+        "waitTime": 20
+      },
+      {
+        "number": 3,
+        "name": "Jessica Clark",
+        "waitTime": 12
+      },
+      {
+        "number": 4,
+        "name": "Michelle Harris",
+        "waitTime": 8
+      },
+      {
+        "number": 5,
+        "name": "Nicole Lewis",
+        "waitTime": 3
+      }
+    ],
+    "avgWaitTime": 25
+  },
+  {
+    "id": "DEPT-008",
+    "name": "Endocrinology",
+    "head": "Dr. Kevin Thompson",
+    "location": "2nd Floor, Wing A",
+    "activeQueue": [
+      {
+        "number": 1,
+        "name": "Daniel Young",
+        "waitTime": 40
+      },
+      {
+        "number": 2,
+        "name": "Patricia King",
+        "waitTime": 32
+      },
+      {
+        "number": 3,
+        "name": "Christopher Wright",
+        "waitTime": 25
+      },
+      {
+        "number": 4,
+        "name": "Barbara Lopez",
+        "waitTime": 18
+      },
+      {
+        "number": 5,
+        "name": "Matthew Hill",
+        "waitTime": 12
+      },
+      {
+        "number": 6,
+        "name": "Elizabeth Scott",
+        "waitTime": 6
+      },
+      {
+        "number": 7,
+        "name": "Ryan Green",
+        "waitTime": 2
+      }
+    ],
+    "avgWaitTime": 32
+  },
+  {
+    "id": "DEPT-009",
+    "name": "Radiology",
+    "head": "Dr. Mark Stevens",
+    "location": "Basement Level, Wing B",
+    "activeQueue": [
+      {
+        "number": 1,
+        "name": "Kevin Adams",
+        "waitTime": 15
+      },
+      {
+        "number": 2,
+        "name": "Helen Baker",
+        "waitTime": 8
+      }
+    ],
+    "avgWaitTime": 10
+  },
+  {
+    "id": "DEPT-010",
+    "name": "Laboratory",
+    "head": "Dr. Sandra Mitchell",
+    "location": "Basement Level, Wing A",
+    "activeQueue": [
+      {
+        "number": 1,
+        "name": "George Nelson",
+        "waitTime": 5
+      }
+    ],
+    "avgWaitTime": 5
+  }
+]

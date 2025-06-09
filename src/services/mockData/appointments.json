@@ -1,0 +1,90 @@
+[
+  {
+    "id": "APT-001",
+    "patientId": "PAT-001",
+    "doctorId": "STF-001",
+    "departmentId": "DEPT-001",
+    "dateTime": "2024-02-15T09:00:00",
+    "duration": 30,
+    "status": "scheduled",
+    "reason": "Annual physical examination",
+    "notes": "Patient reports feeling well, routine checkup"
+  },
+  {
+    "id": "APT-002",
+    "patientId": "PAT-002",
+    "doctorId": "STF-005",
+    "departmentId": "DEPT-004",
+    "dateTime": "2024-02-15T10:30:00",
+    "duration": 45,
+    "status": "confirmed",
+    "reason": "Diabetes follow-up",
+    "notes": "Check blood sugar levels and medication adjustment"
+  },
+  {
+    "id": "APT-003",
+    "patientId": "PAT-003",
+    "doctorId": "STF-007",
+    "departmentId": "DEPT-007",
+    "dateTime": "2024-02-15T14:00:00",
+    "duration": 60,
+    "status": "in-progress",
+    "reason": "Prenatal checkup",
+    "notes": "20-week ultrasound and routine prenatal care"
+  },
+  {
+    "id": "APT-004",
+    "patientId": "PAT-004",
+    "doctorId": "STF-001",
+    "departmentId": "DEPT-002",
+    "dateTime": "2024-02-16T11:00:00",
+    "duration": 30,
+    "status": "scheduled",
+    "reason": "Cardiology consultation",
+    "notes": "Follow-up after stent placement, chest pain evaluation"
+  },
+  {
+    "id": "APT-005",
+    "patientId": "PAT-005",
+    "doctorId": "STF-006",
+    "departmentId": "DEPT-006",
+    "dateTime": "2024-02-14T15:30:00",
+    "duration": 30,
+    "status": "completed",
+    "reason": "Asthma management",
+    "notes": "Inhaler technique review and medication refill"
+  },
+  {
+    "id": "APT-006",
+    "patientId": "PAT-001",
+    "doctorId": "STF-003",
+    "departmentId": "DEPT-006",
+    "dateTime": "2024-02-13T08:00:00",
+    "duration": 15,
+    "status": "completed",
+    "reason": "Blood pressure check",
+    "notes": "Routine BP monitoring, levels stable"
+  },
+  {
+    "id": "APT-007",
+    "patientId": "PAT-002",
+    "doctorId": "STF-008",
+    "departmentId": "DEPT-003",
+    "dateTime": "2024-02-17T13:00:00",
+    "duration": 30,
+    "status": "scheduled",
+    "reason": "Lab work review",
+    "notes": "Discuss recent HbA1c results and dietary recommendations"
+  },
+  {
+    "id": "APT-008",
+    "patientId": "PAT-004",
+    "doctorId": "STF-002",
+    "departmentId": "DEPT-001",
+    "dateTime": "2024-02-12T16:00:00",
+    "duration": 20,
+    "status": "cancelled",
+    "reason": "Medication consultation",
+    "notes": "Patient cancelled due to scheduling conflict"
+  }
+]

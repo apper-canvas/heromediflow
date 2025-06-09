@@ -1,0 +1,180 @@
+[
+  {
+    "id": "PAT-001",
+    "name": "Sarah Johnson",
+    "dateOfBirth": "1985-07-15",
+    "gender": "Female",
+    "phone": "+1-555-0123",
+    "email": "sarah.johnson@email.com",
+    "address": "123 Main Street, Springfield, IL 62701",
+    "bloodType": "O+",
+    "allergies": ["Penicillin", "Shellfish"],
+    "medicalHistory": [
+      {
+        "condition": "Hypertension",
+        "date": "2022-03-15",
+        "type": "Chronic",
+        "notes": "Well controlled with medication"
+      },
+      {
+        "condition": "Appendectomy",
+        "date": "2018-11-20",
+        "type": "Surgery",
+        "notes": "Laparoscopic procedure, no complications"
+      }
+    ],
+    "currentMedications": [
+      {
+        "name": "Lisinopril",
+        "dosage": "10mg",
+        "frequency": "Once daily",
+        "startDate": "2022-03-15"
+      }
+    ],
+    "emergencyContact": {
+      "name": "Michael Johnson",
+      "phone": "+1-555-0124",
+      "relationship": "Spouse"
+    }
+  },
+  {
+    "id": "PAT-002",
+    "name": "Robert Chen",
+    "dateOfBirth": "1972-12-08",
+    "gender": "Male",
+    "phone": "+1-555-0234",
+    "email": "robert.chen@email.com",
+    "address": "456 Oak Avenue, Springfield, IL 62702",
+    "bloodType": "A-",
+    "allergies": ["Latex"],
+    "medicalHistory": [
+      {
+        "condition": "Type 2 Diabetes",
+        "date": "2020-05-10",
+        "type": "Chronic",
+        "notes": "Managed with diet and medication"
+      }
+    ],
+    "currentMedications": [
+      {
+        "name": "Metformin",
+        "dosage": "500mg",
+        "frequency": "Twice daily",
+        "startDate": "2020-05-10"
+      }
+    ],
+    "emergencyContact": {
+      "name": "Lisa Chen",
+      "phone": "+1-555-0235",
+      "relationship": "Wife"
+    }
+  },
+  {
+    "id": "PAT-003",
+    "name": "Emily Rodriguez",
+    "dateOfBirth": "1990-04-22",
+    "gender": "Female",
+    "phone": "+1-555-0345",
+    "email": "emily.rodriguez@email.com",
+    "address": "789 Pine Road, Springfield, IL 62703",
+    "bloodType": "B+",
+    "allergies": [],
+    "medicalHistory": [
+      {
+        "condition": "Pregnancy - First Child",
+        "date": "2023-01-15",
+        "type": "Condition",
+        "notes": "Normal pregnancy, no complications"
+      }
+    ],
+    "currentMedications": [
+      {
+        "name": "Prenatal Vitamins",
+        "dosage": "1 tablet",
+        "frequency": "Once daily",
+        "startDate": "2023-01-15"
+      }
+    ],
+    "emergencyContact": {
+      "name": "Carlos Rodriguez",
+      "phone": "+1-555-0346",
+      "relationship": "Husband"
+    }
+  },
+  {
+    "id": "PAT-004",
+    "name": "James Williams",
+    "dateOfBirth": "1965-09-30",
+    "gender": "Male",
+    "phone": "+1-555-0456",
+    "email": "james.williams@email.com",
+    "address": "321 Elm Street, Springfield, IL 62704",
+    "bloodType": "AB+",
+    "allergies": ["Aspirin", "Codeine"],
+    "medicalHistory": [
+      {
+        "condition": "Coronary Artery Disease",
+        "date": "2021-08-12",
+        "type": "Chronic",
+        "notes": "Stent placement in LAD, doing well"
+      },
+      {
+        "condition": "High Cholesterol",
+        "date": "2019-02-20",
+        "type": "Chronic",
+        "notes": "Managed with statin therapy"
+      }
+    ],
+    "currentMedications": [
+      {
+        "name": "Atorvastatin",
+        "dosage": "40mg",
+        "frequency": "Once daily",
+        "startDate": "2019-02-20"
+      },
+      {
+        "name": "Clopidogrel",
+        "dosage": "75mg",
+        "frequency": "Once daily",
+        "startDate": "2021-08-12"
+      }
+    ],
+    "emergencyContact": {
+      "name": "Mary Williams",
+      "phone": "+1-555-0457",
+      "relationship": "Wife"
+    }
+  },
+  {
+    "id": "PAT-005",
+    "name": "Maria Garcia",
+    "dateOfBirth": "1978-11-14",
+    "gender": "Female",
+    "phone": "+1-555-0567",
+    "email": "maria.garcia@email.com",
+    "address": "654 Maple Drive, Springfield, IL 62705",
+    "bloodType": "O-",
+    "allergies": ["Peanuts"],
+    "medicalHistory": [
+      {
+        "condition": "Asthma",
+        "date": "2010-06-05",
+        "type": "Chronic",
+        "notes": "Exercise-induced, well controlled"
+      }
+    ],
+    "currentMedications": [
+      {
+        "name": "Albuterol Inhaler",
+        "dosage": "90mcg",
+        "frequency": "As needed",
+        "startDate": "2010-06-05"
+      }
+    ],
+    "emergencyContact": {
+      "name": "Antonio Garcia",
+      "phone": "+1-555-0568",
+      "relationship": "Husband"
+    }
+  }
+]
